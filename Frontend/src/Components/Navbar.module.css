@@ -1,0 +1,19 @@
+#Navbar {
+    background-color: #f8f9fa;
+    font-family: 'Poppins', sans-serif;
+    padding: 10px 20px;
+    border-bottom: 2px solid #dee2e6;
+}
+
+#NavLink {
+    font-size: medium;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-decoration: none;
+    color: #4d4c4c;
+    transition: color 0.3s ease-in-out;
+}
+
+#NavLink:hover {
+    color: #d4475b;
+}
+
