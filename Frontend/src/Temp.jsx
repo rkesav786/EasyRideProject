@@ -10,6 +10,7 @@ import { SearchBus } from './Components/Buspage/SearchBus';
 import Footer from './Components/Footer';
 import { SBD } from "./Components/BookTicket/SBD";
 
+
 const Temp = () => {
   const [FD, setFD] = useState([]);
   console.log(FD);

@@ -3,10 +3,13 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import style from "./SBD.module.css";
 import { IoMdArrowForward } from "react-icons/io";
+import { Link } from "react-router-dom";
+
+import { Payment } from "../Paymentpage/Payment";
 
 export const SBD = () => {
   const { id } = useParams();
-  const [data, setData] = useState();
+  const [data, setData] = useState([]);
 
   console.log(data);
 
@@ -185,9 +188,7 @@ export const SBD = () => {
                   </div>
                   <div className="col-4 mt-3">
                     <div className="button d-flex justify-content-end">
-                      <button className="btn btn-danger btn-lg ">
-                        Continue Booking
-                      </button>
+                      <Payment />
                     </div>
                   </div>
                 </div>

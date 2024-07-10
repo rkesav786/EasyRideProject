@@ -1,6 +1,10 @@
 import React from 'react';
 import { FilterComponent } from './FilterComponent';
 import { Link } from "react-router-dom";
+import { FaBottleWater } from "react-icons/fa6";
+import { PiPlugChargingDuotone } from "react-icons/pi";
+import { GiCctvCamera } from "react-icons/gi";
+import { PiTelevisionSimpleFill } from "react-icons/pi";
 export const FilterBus = ({ F }) => {
   console.log("F in FilterBus:", F);
   return (
@@ -20,6 +24,14 @@ export const FilterBus = ({ F }) => {
                         <div className="col-md-4 col-sm-12">
                           <h6>{bus.Tname}</h6>
                           <p>AC or Non-AC</p>
+                          <div>
+                            <span className="fs-5 p-1">
+                              {bus.Water ? <FaBottleWater /> : ""}
+                              {bus.Charge ? <PiPlugChargingDuotone /> : ""}
+                              {bus.Cctv ? <GiCctvCamera /> : ""}
+                              {bus.Television ? <PiTelevisionSimpleFill /> : ""}
+                            </span>
+                          </div>
                         </div>
                         <div className="col-md-4 col-sm-12 d-flex">
                           <div className="boarding me-5">
