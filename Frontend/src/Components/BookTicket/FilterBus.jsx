@@ -1,9 +1,8 @@
 import React from 'react';
 import { FilterComponent } from './FilterComponent';
-
+import { Link } from "react-router-dom";
 export const FilterBus = ({ F }) => {
   console.log("F in FilterBus:", F);
-
   return (
     <>
       <div className="row">
@@ -38,10 +37,18 @@ export const FilterBus = ({ F }) => {
                             <span className="badge bg-success">4.4</span>
                           </div>
                           <div className="price ms-2">
-                            <h6>Starting from <br />INR <del>899</del>{bus.Rate}</h6>
+                            <h6>
+                              Starting from <br />
+                              INR <del>899</del>
+                              {bus.Rate}
+                            </h6>
                           </div>
                           <div className="book ms-5 mt-4">
-                            <button className="btn btn-outline-dark">Book</button>
+                            <Link to={`/SBD/${bus._id}`}>
+                              <button className="btn btn-outline-dark">
+                                Book
+                              </button>
+                            </Link>
                           </div>
                         </div>
                       </div>

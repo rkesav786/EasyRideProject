@@ -17,14 +17,15 @@ export const SearchBus = ({ setFD }) => {
     let SearchData = {
       From: from.toUpperCase(),
       To: to.toUpperCase(),
-      Date: date
+      Date: date,
     };
-    axios.post("http://localhost:8000/searchbus", SearchData)
+    axios
+      .post("http://localhost:8000/searchbus", SearchData)
       .then((res) => {
         console.log(SearchData);
         setFD(res.data);
         console.log("Data received from server:", res.data);
-        navigate('/list'); // Navigate to the list route after setting FD
+        navigate("/list"); // Navigate to the list route after setting FD
       })
       .catch((e) => {
         console.log("No Data Available!", e);
@@ -36,21 +37,23 @@ export const SearchBus = ({ setFD }) => {
       <div className="heading text-center">
         <h3>India's No. 1 Online Bus Ticket Booking Site</h3>
       </div>
-      <div className='container-fluid mt-5' id={style.cardcontainer}>
+      <div className="container-fluid mt-5" id={style.cardcontainer}>
         <div className="card" id={style.card}>
           <div className="card-body">
             <form onSubmit={handleSubmit}>
               <div className="row align-items-center">
                 <div className="col-12 col-md-3 mb-3 mb-md-0">
                   <div className="input-group">
-                    <div className='icon fs-4 me-3'>
+                    <div className="icon fs-4 me-3">
                       <TbBus />
                     </div>
-                    <label htmlFor='from' className='form-label me-2'>From</label>
+                    <label htmlFor="from" className="form-label me-2">
+                      From
+                    </label>
                     <input
                       id={style.forminput}
                       type="text"
-                      className='form-control'
+                      className="form-control"
                       value={from}
                       onChange={(e) => setFrom(e.target.value)}
                     />
@@ -58,14 +61,16 @@ export const SearchBus = ({ setFD }) => {
                 </div>
                 <div className="col-12 col-md-3 mb-3 mb-md-0">
                   <div className="input-group">
-                    <div className='icon fs-4 me-3'>
+                    <div className="icon fs-4 me-3">
                       <TbBusStop />
                     </div>
-                    <label htmlFor='to' className='form-label me-2'>To</label>
+                    <label htmlFor="to" className="form-label me-2">
+                      To
+                    </label>
                     <input
                       id={style.forminput}
                       type="text"
-                      className='form-control'
+                      className="form-control"
                       value={to}
                       onChange={(e) => setTo(e.target.value)}
                     />
@@ -73,12 +78,14 @@ export const SearchBus = ({ setFD }) => {
                 </div>
                 <div className="col-12 col-md-3 mb-3 mb-md-0">
                   <div className="input-group">
-                    <label htmlFor='date' className='form-label me-2'>Date</label>
+                    <label htmlFor="date" className="form-label me-2">
+                      Date
+                    </label>
                     <input
                       id={style.forminput}
                       type="date"
-                      className='form-control'
-                      placeholder='yyyy-mm-dd'
+                      className="form-control"
+                      placeholder="yyyy-mm-dd"
                       value={date}
                       onChange={(e) => setDate(e.target.value)}
                     />
@@ -86,7 +93,10 @@ export const SearchBus = ({ setFD }) => {
                 </div>
                 <div className="col-12 col-md-3">
                   <div className="button">
-                    <button type="submit" className='btn btn-danger rounded-pill w-100'>
+                    <button
+                      type="submit"
+                      className="btn btn-danger rounded-pill w-100"
+                    >
                       Search
                     </button>
                   </div>

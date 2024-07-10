@@ -8,6 +8,7 @@ import { Travelowns } from './travelspage/Travelowns';
 import ShowBus from './Components/BookTicket/ShowBus';
 import { SearchBus } from './Components/Buspage/SearchBus';
 import Footer from './Components/Footer';
+import { SBD } from "./Components/BookTicket/SBD";
 
 const Temp = () => {
   const [FD, setFD] = useState([]);
@@ -17,14 +18,15 @@ const Temp = () => {
     <Router>
       <Navbar />
       <Routes>
-        <Route path='/bus' element={<SearchBus setFD={setFD} />} />
-        <Route path='/train' element={<SearchTrain />} />
-        <Route path='/help' element={<Help />} />
-        <Route path='/account' element={<Account />} />
-        <Route path='/travelowns' element={<Travelowns />} />
-        <Route path='/list' element={<ShowBus FD={FD} />} />
+        <Route path="/bus" element={<SearchBus setFD={setFD} />} />
+        <Route path="/train" element={<SearchTrain />} />
+        <Route path="/help" element={<Help />} />
+        <Route path="/account" element={<Account />} />
+        <Route path="/travelowns" element={<Travelowns />} />
+        <Route path="/list" element={<ShowBus FD={FD} />} />
+        <Route path="/SBD/:id" element={<SBD />} />
       </Routes>
-      <div className='mt-3'>
+      <div className="mt-3">
         <Footer />
       </div>
     </Router>

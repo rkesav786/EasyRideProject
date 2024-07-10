@@ -1,0 +1,18 @@
+#font{
+    font-size: small;
+    margin-top: 0%;
+    font-weight: lighter;
+}
+#card{
+    border: none;
+}
+#cardcontainer{
+    border: 1px solid gray
+}
+
+#insurencefont{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: lighter;
+    font-size: small;
+    
+}
