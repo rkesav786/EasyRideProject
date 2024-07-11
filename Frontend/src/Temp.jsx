@@ -9,11 +9,12 @@ import ShowBus from './Components/BookTicket/ShowBus';
 import { SearchBus } from './Components/Buspage/SearchBus';
 import Footer from './Components/Footer';
 import { SBD } from "./Components/BookTicket/SBD";
-
+import { Printpage } from "./Components/Paymentpage/Printpage";
 
 const Temp = () => {
   const [FD, setFD] = useState([]);
-  console.log(FD);
+  const [TD, setTD] = useState({});
+  console.log(TD);
 
   return (
     <Router>
@@ -25,7 +26,8 @@ const Temp = () => {
         <Route path="/account" element={<Account />} />
         <Route path="/travelowns" element={<Travelowns />} />
         <Route path="/list" element={<ShowBus FD={FD} />} />
-        <Route path="/SBD/:id" element={<SBD />} />
+        <Route path="/SBD/:id" element={<SBD setTD={setTD} />} />
+        <Route path="/downloadticket" element={<Printpage TD={TD} />}></Route>
       </Routes>
       <div className="mt-3">
         <Footer />
