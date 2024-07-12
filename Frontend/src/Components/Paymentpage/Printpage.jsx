@@ -1,40 +1,84 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
+import html2canvas from "html2canvas";
+import "./Printpage.css"; // Assuming you have a CSS file for styles
 
 export const Printpage = ({ TD }) => {
-  console.log(TD);
+  const ticketRef = useRef();
+
+  const downloadTicket = () => {
+    html2canvas(ticketRef.current).then((canvas) => {
+      const link = document.createElement("a");
+      link.download = "ticket.png";
+      link.href = canvas.toDataURL("image/png");
+      link.click();
+    });
+  };
+
+  useEffect(() => {
+    console.log(TD);
+  }, [TD]);
+
   return (
     <>
-      <div
-        className="card"
-        style={{ border: "dotted", fontFamily: "monospace" }}
-      >
-        <img src="..." className="card-img-top" alt="..." />
-        <div className="card-body">
-          <h5 className="card-title">Your Ticket</h5>
+      <div ref={ticketRef} className="ticket-container">
+        <div className="ticket-header">
+          <h2>Your Bus Ticket</h2>
         </div>
-        <div className="card-body d-flex">
-          <div className="bookingdetails ms-5">
-            <p>Bus provider: Lion transport</p>
-            <p>Start From: Chennai</p>
-            <p>To: Tenkasi</p>
-            <p>Journey Date: xx.yy.zzzz</p>
-            <p>Arrival time: 07.00 pm</p>
-            <p>Departure time: 06.00 am</p>
-            <p>Journey time: 11 hours</p>
+        <div className="ticket-body">
+          <div className="ticket-section">
+            <h3>Journey Details</h3>
+            <p>
+              <strong>Bus Provider:</strong> Lion Transport
+            </p>
+            <p>
+              <strong>From:</strong> Chennai
+            </p>
+            <p>
+              <strong>To:</strong> Tenkasi
+            </p>
+            <p>
+              <strong>Journey Date:</strong> xx.yy.zzzz
+            </p>
+            <p>
+              <strong>Departure Time:</strong> 06.00 am
+            </p>
+            <p>
+              <strong>Arrival Time:</strong> 07.00 pm
+            </p>
+            <p>
+              <strong>Journey Duration:</strong> 11 hours
+            </p>
           </div>
-
-          <div className="passengerdetails ms-5">
-            <p>Passenger Name: Kesavan R</p>
-            <p>Age: 22</p>
-            <p>Gender: Male</p>
-            <p>Phone number: 1234567890</p>
-            <p>Email: abc@gmail.com</p>
-            <p>Trip price: RS 1000</p>
+          <div className="ticket-section">
+            <h3>Passenger Details</h3>
+            <p>
+              <strong>Name:</strong> {TD.Username}
+            </p>
+            <p>
+              <strong>Age:</strong> {TD.Age}
+            </p>
+            <p>
+              <strong>Gender:</strong> {TD.Gender}
+            </p>
+            <p>
+              <strong>Phone Number:</strong> 1234567890
+            </p>
+            <p>
+              <strong>Email:</strong> abc@gmail.com
+            </p>
+            <p>
+              <strong>Trip Price:</strong> RS 1000
+            </p>
           </div>
+        </div>
+        <div className="ticket-footer">
+          <p>Thank you for choosing EasyRide!</p>
         </div>
       </div>
-      <div>
-        <button className="btn btn-primary">Download Ticket</button>
+      <div className="download-button-container">
+        <button className="btn btn-primary" onClick={downloadTicket}>
+          Download Ticket
+        </button>
       </div>
     </>
   );

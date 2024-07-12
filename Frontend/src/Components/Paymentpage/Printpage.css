@@ -1,0 +1,69 @@
+.ticket-container {
+    border: 2px solid #333;
+    border-radius: 10px;
+    width: 600px;
+    margin: 20px auto;
+    font-family: 'Arial, sans-serif';
+    background: #f8f9fa;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .ticket-header {
+    background: #343a40;
+    color: #fff;
+    padding: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    text-align: center;
+  }
+  
+  .ticket-body {
+    padding: 20px;
+  }
+  
+  .ticket-section {
+    margin-bottom: 20px;
+  }
+  
+  .ticket-section h3 {
+    color: #343a40;
+    border-bottom: 1px solid #343a40;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .ticket-section p {
+    margin: 5px 0;
+  }
+  
+  .ticket-section p strong {
+    color: #343a40;
+  }
+  
+  .ticket-footer {
+    background: #343a40;
+    color: #fff;
+    padding: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    text-align: center;
+  }
+  
+  .download-button-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }
+  

@@ -15,9 +15,12 @@ export const SBD = ({ setTD }) => {
 
   let Navi = useNavigate();
 
+ 
+
   const handlePassengerData = (e) => {
     e.preventDefault();
     const passengerInfo = {
+      BusName: data.Tname,
       Username: username,
       Gender: gender,
       Age: age,
