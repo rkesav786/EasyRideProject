@@ -13,7 +13,7 @@ import { Printpage } from "./Components/Paymentpage/Printpage";
 
 const Temp = () => {
   const [FD, setFD] = useState([]);
-  const [TD, setTD] = useState({});
+  const [TD, setTD] = useState();
   console.log(TD);
 
   return (

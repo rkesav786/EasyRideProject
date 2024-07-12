@@ -6,12 +6,7 @@ import { Printpage } from "./Components/Paymentpage/Printpage";
 import { PersonalDetails } from "./Components/BookTicket/PersonalDetails";
 
 const App = () => {
-  return (
-    <div className="container">
-      <Temp />
-      {/* <Printpage /> */}
-    </div>
-  );
+  return <Temp />;
 };
 
 export default App
