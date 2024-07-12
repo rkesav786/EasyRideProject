@@ -28,22 +28,22 @@ export const Printpage = ({ TD }) => {
           <div className="ticket-section">
             <h3>Journey Details</h3>
             <p>
-              <strong>Bus Provider:</strong> Lion Transport
+              <strong>Bus Provider:</strong> {TD.BusName}
             </p>
             <p>
-              <strong>From:</strong> Chennai
+              <strong>From:</strong> {TD.StartingPoint}
             </p>
             <p>
-              <strong>To:</strong> Tenkasi
+              <strong>To:</strong> {TD.EndingPoint}
             </p>
             <p>
-              <strong>Journey Date:</strong> xx.yy.zzzz
+              <strong>Journey Date:</strong> {TD.Date}
             </p>
             <p>
-              <strong>Departure Time:</strong> 06.00 am
+              <strong>Departure Time:</strong> {TD.StartTime}
             </p>
             <p>
-              <strong>Arrival Time:</strong> 07.00 pm
+              <strong>Arrival Time:</strong> {TD.EndTime}
             </p>
             <p>
               <strong>Journey Duration:</strong> 11 hours

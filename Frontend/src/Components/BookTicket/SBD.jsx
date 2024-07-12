@@ -15,17 +15,31 @@ export const SBD = ({ setTD }) => {
 
   let Navi = useNavigate();
 
- 
+
+  let BN = data[0].Tname;
+  let SP = data[0].From;
+  let EP = data[0].To;
+  let ST = data[0].Stime;
+  let ET = data[0].Etime;
+  let D = data[0].Date;
+  console.log(BN, SP, EP, ST, ET, D);
 
   const handlePassengerData = (e) => {
     e.preventDefault();
     const passengerInfo = {
-      BusName: data.Tname,
+      BusName: BN,
+      StartingPoint: SP,
+      EndingPoint: EP,
+      StartTime: ST,
+      EndTime: ET,
+      Date: D,
       Username: username,
       Gender: gender,
       Age: age,
       Insurance: insurance === "yes", // Only store one value for insurance
     };
+
+    console.log(passengerInfo);
 
     setTD(passengerInfo);
 
@@ -36,7 +50,7 @@ export const SBD = ({ setTD }) => {
     axios
       .get(`http://localhost:8000/SBD/${id}`)
       .then((response) => {
-        console.log("Received data:", response.data);
+        // console.log("Received data:", response.data);
         setData(response.data);
       })
       .catch((e) => {
