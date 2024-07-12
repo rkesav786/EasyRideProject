@@ -14,25 +14,15 @@ export const SBD = ({ setTD }) => {
   const [insurance, setInsurance] = useState(""); // Simplified insurance handling
 
   let Navi = useNavigate();
-
-
-  let BN = data[0].Tname;
-  let SP = data[0].From;
-  let EP = data[0].To;
-  let ST = data[0].Stime;
-  let ET = data[0].Etime;
-  let D = data[0].Date;
-  console.log(BN, SP, EP, ST, ET, D);
-
   const handlePassengerData = (e) => {
     e.preventDefault();
     const passengerInfo = {
-      BusName: BN,
-      StartingPoint: SP,
-      EndingPoint: EP,
-      StartTime: ST,
-      EndTime: ET,
-      Date: D,
+      BusName: data[0].Tname,
+      StartingPoint: data[0].From,
+      EndingPoint: data[0].To,
+      StartTime: data[0].Stime,
+      EndTime: data[0].Etime,
+      Date: data[0].Date,
       Username: username,
       Gender: gender,
       Age: age,

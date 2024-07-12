@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import html2canvas from "html2canvas";
 import "./Printpage.css"; // Assuming you have a CSS file for styles
-
+import { Payment } from "./Payment";
 export const Printpage = ({ TD }) => {
   const ticketRef = useRef();
 
@@ -80,6 +80,7 @@ export const Printpage = ({ TD }) => {
           Download Ticket
         </button>
       </div>
+
     </>
   );
 };

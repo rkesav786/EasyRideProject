@@ -1,23 +1,104 @@
-import React from 'react';
-import { FilterComponent } from './FilterComponent';
+import React, { useState } from "react";
+import { FilterComponent } from "./FilterComponent";
 import { Link } from "react-router-dom";
 import { FaBottleWater } from "react-icons/fa6";
 import { PiPlugChargingDuotone } from "react-icons/pi";
 import { GiCctvCamera } from "react-icons/gi";
 import { PiTelevisionSimpleFill } from "react-icons/pi";
+
 export const FilterBus = ({ F }) => {
-  console.log("F in FilterBus:", F);
+  const [filters, setFilters] = useState({
+    water: false,
+    charging: false,
+    cctv: false,
+    television: false,
+  });
+
+  const handleFilterChange = (e) => {
+    const { name, checked } = e.target;
+    setFilters({
+      ...filters,
+      [name]: checked,
+    });
+  };
+
+  const applyFilters = () => {
+    return F.filter(
+      (bus) =>
+        (filters.water ? bus.Water : true) &&
+        (filters.charging ? bus.Charge : true) &&
+        (filters.cctv ? bus.Cctv : true) &&
+        (filters.television ? bus.Television : true)
+    );
+  };
+
+  const filteredBuses = applyFilters();
+
   return (
     <>
       <div className="row">
         <div className="col-lg-3 col-md-4 col-sm-12">
-          <FilterComponent />
+          <div className="filter-section">
+            <h5>Filter Options</h5>
+            <div className="form-check">
+              <input
+                className="form-check-input"
+                type="checkbox"
+                name="water"
+                id="water"
+                checked={filters.water}
+                onChange={handleFilterChange}
+              />
+              <label className="form-check-label" htmlFor="water">
+                Water Bottle
+              </label>
+            </div>
+            <div className="form-check">
+              <input
+                className="form-check-input"
+                type="checkbox"
+                name="charging"
+                id="charging"
+                checked={filters.charging}
+                onChange={handleFilterChange}
+              />
+              <label className="form-check-label" htmlFor="charging">
+                Charging Point
+              </label>
+            </div>
+            <div className="form-check">
+              <input
+                className="form-check-input"
+                type="checkbox"
+                name="cctv"
+                id="cctv"
+                checked={filters.cctv}
+                onChange={handleFilterChange}
+              />
+              <label className="form-check-label" htmlFor="cctv">
+                CCTV
+              </label>
+            </div>
+            <div className="form-check">
+              <input
+                className="form-check-input"
+                type="checkbox"
+                name="television"
+                id="television"
+                checked={filters.television}
+                onChange={handleFilterChange}
+              />
+              <label className="form-check-label" htmlFor="television">
+                Television
+              </label>
+            </div>
+          </div>
         </div>
         <div className="col-lg-9 col-md-8 col-sm-12">
           <div className="container">
             <div className="card-container">
-              {F.length > 0 ? (
-                F.map((bus, index) => (
+              {filteredBuses.length > 0 ? (
+                filteredBuses.map((bus, index) => (
                   <div key={index} className="card mb-3">
                     <div className="card-body">
                       <div className="row">
