@@ -38,7 +38,7 @@ export const SBD = ({ setTD }) => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8000/SBD/${id}`)
+      .get(`https://easyrideproject.onrender.com/SBD/${id}`)
       .then((response) => {
         // console.log("Received data:", response.data);
         setData(response.data);

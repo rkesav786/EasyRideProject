@@ -20,7 +20,7 @@ export const SearchBus = ({ setFD }) => {
       Date: date,
     };
     axios
-      .post("http://localhost:8000/searchbus", SearchData)
+      .post(" https://easyrideproject.onrender.com/searchbus", SearchData)
       .then((res) => {
         console.log(SearchData);
         setFD(res.data);

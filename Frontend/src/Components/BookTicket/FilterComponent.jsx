@@ -28,7 +28,7 @@ export const FilterComponent = () => {
       Ftelevision: television,
     };
     axios
-      .post("http://localhost:8000/fillterbus", FilterData)
+      .post("https://easyrideproject.onrender.com/fillterbus", FilterData)
       .then(() => {
         console.log("data posted");
       })

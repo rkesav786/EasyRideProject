@@ -38,7 +38,8 @@ export const Travelowns = () => {
       Television: television
     };
 
-    axios.post("http://localhost:8000/addbus", OABD)
+    axios
+      .post("https://easyrideproject.onrender.com/addbus", OABD)
       .then(() => {
         console.log("Data Posted");
       })
